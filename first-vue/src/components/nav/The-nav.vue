@@ -94,7 +94,7 @@ nav {
   top: 0;
   padding-top: 100px;
   bottom: 0;
-  border-right: 1px solid #49c8ef;
+  border-right: 1px solid var(--grafa-aqua);
   transition: all .4s ease-in-out;
   animation: showmenu .4s ease-in-out forwards;
 
@@ -112,7 +112,7 @@ ul {
   overflow-x: hidden;
 }
 .nav-list-container-channels {
-  background-color: #041f33;
+  background-color: var(--grafa-dark-blue);
   overflow-x: hidden;
 }
 .nav-bottom {
@@ -142,10 +142,10 @@ ul {
 
   }
   & button:nth-child(1) {
-    background-color: #49c8ef;
+    background-color: var(--grafa-aqua);
   }
   & button:nth-child(2) {
-    background-color: #092d4a;
+    background-color: var(--grafa-grey-blue);
     color: white;
   }
 }
@@ -153,7 +153,7 @@ ul {
   display: flex;
   gap: 8px;
   font-size: .6rem;
-  color: #49c8ef;
+  color: var(--grafa-aqua);
   margin-bottom: 10px;
 }
 .contact {

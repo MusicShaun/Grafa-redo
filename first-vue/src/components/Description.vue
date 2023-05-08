@@ -29,7 +29,7 @@
   & h2 {
     font-size: 1.3rem;
     font-weight: 500;
-    color: #59d8e7;
+    color: var(--grafa-aqua);
     margin-bottom: 1rem;
 
   }

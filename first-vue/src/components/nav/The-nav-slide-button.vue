@@ -38,8 +38,8 @@ export default {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   padding: 0.1em;
-  background-color: #001f33;
-  border: 1.5px solid #49c8ef;
+  background-color: var(--grafa-dark-blue);
+  border: 1.5px solid var(--grafa-aqua);
   border-right-width: 1px;
   border-left: none;
   z-index: -1;
@@ -51,8 +51,8 @@ export default {
   &::after {
     content: '';
     position: absolute;
-    border-right: 2px solid #49c8ef;
-    border-bottom: 2px solid #49c8ef;
+    border-right: 2px solid var(--grafa-aqua);
+    border-bottom: 2px solid var(--grafa-aqua);
     width: 10px;
     height: 10px;
     right: 22%;

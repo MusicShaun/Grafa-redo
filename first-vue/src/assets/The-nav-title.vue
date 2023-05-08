@@ -60,7 +60,7 @@ button {
   align-items: center;
   height: 100%;
 
-  color: #079cff;
+  color: var(--grafa-mid-blue);
   white-space: nowrap;
   font-size: .688rem;
   text-transform: none;

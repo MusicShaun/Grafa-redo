@@ -47,7 +47,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #041f33;
+  background-color: var(--grafa-dark-blue);
   z-index: 10;
 }
 .container {
@@ -102,7 +102,7 @@ header {
     border-radius: 1.875rem;
     padding: 0.5rem 1rem;
     border: none;
-    background-color: #002d4a;
+    background-color:var(--grafa-dark-blue);
     outline: none;
     color: white;
     font-size: 1rem;
@@ -148,7 +148,7 @@ header {
 }
 .signup {
   border: none;
-  background: #49c8ef;
+  background: var(--grafa-aqua);
   border-radius: 3px;
   color: black;
 }

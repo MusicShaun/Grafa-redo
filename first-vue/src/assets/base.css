@@ -21,6 +21,13 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+
+  --grafa-dark-blue: #041f33;
+  --grafa-grey-blue: #092d4a;
+  --grafa-aqua: #59d8e7; 
+  --grafa-mid-blue: #079cff;
+  --grafa-hover-blue: #70efde;
 }
 
 /* semantic color variables for this project */

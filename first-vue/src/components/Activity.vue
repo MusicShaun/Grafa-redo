@@ -44,7 +44,7 @@ caption {
   font-weight: 500;
   color: #59d8e7;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #59d8e7;
+  border-bottom: 1px solid var(--grafa-aqua);
   text-align: left;
 }
 tr {
