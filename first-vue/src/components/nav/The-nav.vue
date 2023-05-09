@@ -59,7 +59,7 @@
 
 
 <script>
-import NavButton from './The-Nav-Button.vue'
+import NavButton from './The-nav-button.vue'
 import TheNavTitle from '../../assets/The-nav-title.vue';
 import TheNavIcon from '../../assets/The-nav-icon.vue';
 import NavSlideButton from './The-nav-slide-button.vue';
