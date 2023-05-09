@@ -8,6 +8,8 @@
 
       <Activity />
 
+      <RelatedNews />
+
       <CardWrapper />
 
     </div>
@@ -21,6 +23,7 @@ import BarChart from './charts/Bar-chart.vue';
 import TheDescription from './Description.vue';
 import Activity from './Activity.vue';
 import CardWrapper from './CardWrapper.vue';
+import RelatedNews from './RelatedNews.vue';
 
 export default {
   name: 'TheMain',
@@ -28,7 +31,8 @@ export default {
     BarChart,
     TheDescription,
     Activity,
-    CardWrapper
+    CardWrapper,
+
 
 },
   data() {

@@ -1,8 +1,8 @@
 <template>
-  <article>
+  <div class="card">
     <div class="header">
       <a>
-        <div class="icon"></div>
+        <img class="icon" src="https://images.grafa.com/publishers/grafa-100.jpg" :alt="'grafa logo'" />
         <div>Grafa</div>
       </a>
       <button class="follow">
@@ -15,40 +15,47 @@
       </button>
     </div>
     <div class="image">
-      <img src="../assets/example.png" alt="My Image" />
+      <img :src="grafaImage" :alt="'image'" />
     </div>
     <div class="text">
       <h3>The ASX is at lunch - </h3>
       <h3>Find out who and why?</h3>
     </div>
-  </article>
+  </div>
 
 </template>
 
 <script>
 import getImage from '../assets/example.png'
-console.log(getImage)
+
 
 export default {
-  data() {
-    return {
-      
+  name: 'Card',
+  components: {
+
+  },
+  props: {
+    grafaImage: {
+      type: String,
+      default: getImage
     }
-  }
+  },  
+
 }
 </script>
 
 
 <style scoped lang="scss">
 
-article {
+.card {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 263px;
+  width: calc(100% - 20px);
   height: 314px;
   color: white;
-  margin-right: 20px;
+  margin: 0;
+  padding: 0;
 }
 .header {
   display: flex;
