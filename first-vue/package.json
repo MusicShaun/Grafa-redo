@@ -21,5 +21,9 @@
     "@vitejs/plugin-vue": "^4.2.1",
     "sass": "^1.62.1",
     "vite": "^4.3.4"
-  }
+  },
+  "description": "First weekend on Vue. Getting used to the syntax via remaking the Grafa website.",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
 }

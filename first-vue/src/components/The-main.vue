@@ -8,6 +8,8 @@
 
       <Activity />
 
+      <FiatTable />
+
       <RelatedNews />
 
       <CardWrapper />
@@ -24,6 +26,7 @@ import TheDescription from './Description.vue';
 import Activity from './Activity.vue';
 import CardWrapper from './CardWrapper.vue';
 import RelatedNews from './RelatedNews.vue';
+import FiatTable from './fiat-table/FiatTableWrapper.vue';
 
 export default {
   name: 'TheMain',
@@ -32,6 +35,7 @@ export default {
     TheDescription,
     Activity,
     CardWrapper,
+    FiatTable,
 
 
 },
