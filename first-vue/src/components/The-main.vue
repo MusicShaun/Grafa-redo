@@ -1,5 +1,5 @@
 <template>
-  <main class="wrapper">
+  <main class="mainWrapper">
     <div class="container">
 
       <BarChart />
@@ -10,9 +10,13 @@
 
       <FiatTable />
 
+      <BigFiatTable  :items="tableData" />
+      <ThinFiatTable  :items="tableData2" />
+      <BigFiatTable  :items="tableData3" />
+
       <RelatedNews />
 
-      <CardWrapper />
+      <CardWrapper/>
 
     </div>
   </main>
@@ -27,6 +31,11 @@ import Activity from './Activity.vue';
 import CardWrapper from './CardWrapper.vue';
 import RelatedNews from './RelatedNews.vue';
 import FiatTable from './fiat-table/FiatTableWrapper.vue';
+import BigFiatTable from './fiat-table/BigFIatTable.vue';
+import ThinFiatTable from './fiat-table/ThinFiatTable.vue';
+import tableData from '../db/big-table-example'
+import tableData2 from '../db/another-table'
+import tableData3 from '../db/last-one'
 
 export default {
   name: 'TheMain',
@@ -36,19 +45,21 @@ export default {
     Activity,
     CardWrapper,
     FiatTable,
-
-
+    BigFiatTable,
+    ThinFiatTable,
 },
   data() {
     return {
-
+      tableData,
+      tableData2,
+      tableData3
     }
   }
 }
 </script>
 
-<style scoped>
-.wrapper {
+<style scoped lang="scss">
+.mainWrapper {
   display: flex;
   width: 100%;
   flex: 1;
@@ -64,6 +75,7 @@ export default {
   width: 100%;
   max-width: 70rem;
   margin-inline: auto;
+  flex-wrap: nowrap;
 }
 
 

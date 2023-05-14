@@ -76,6 +76,7 @@ export default {
 }
 .box {
   display: flex;
+  margin: none;
 }
 .box2 {
   width: 100px;

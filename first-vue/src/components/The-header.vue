@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header >
     <div class="container">
 
       <div name="logo" class="logo-container">
@@ -33,8 +33,38 @@ export default {
   components: {
     Magnify
   },
+  data() {
+    return {
+      previous: 0
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.hideHeader)
+  },
+  unmounted() {
+
+  },
+  methods: {
+    hideHeader() {
+      let current = window.scrollY
+      if (current > this.previous) {
+        document.querySelector('header').style.transform = 'translateY(-100%)'
+      } else {
+        document.querySelector('header').style.transform = 'translateY(0%)'
+      }
+      console.log(window.scrollY)
+      this.previous = current
+
+      //REDO THIS 
+      // HAVE THE METRIC BE PERCENTAGES.
+      // LIMITERS ARE TRANSLATE 100% AND 0%
+      // EVERY SCROLL ADD A PERCENTAGE TO THE TRANSLATE
+      // UNTIL IT LIMITS AT -100%
+    }
+  }
 
 }
+
 
 </script>
 
@@ -126,10 +156,11 @@ header {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 1em;
+  right: 1rem;
   margin: 0;
   gap: 0.5em;
-
+  width: fit-content;
+  
   display: flex;
   align-items: center;
   padding: 0 0.5em 0 0;

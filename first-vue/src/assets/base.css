@@ -28,7 +28,16 @@
   --grafa-aqua: #59d8e7; 
   --grafa-mid-blue: #079cff;
   --grafa-hover-blue: #70efde;
+  --grafa-green: #00ff51;
+  --grafa-red: #fe2e2e;
+
+  --mobile: 600px;
+  --tablet: 600px;
+  --laptop:  992px;
+  --desktop: 1200px;
+
 }
+
 
 /* semantic color variables for this project */
 :root {

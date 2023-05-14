@@ -1,38 +1,23 @@
 <template>
+  <div class="wrapper" scoped>
   <div class="container"> 
 
 
-    <h2 :style="{ color: items.title !== 'Stocks on the charge' ? 'var(--grafa-red)' : 'var(--grafa-green)' }">
+    <h2>
       {{ items.title }}
     </h2>
-    <div class="options">
-      <button class="options-button" 
-        :style="{
-          backgroundColor: items.title !== 'Stocks on the charge' ? 'var(--grafa-red)' : 'var(--grafa-green)',
-          color: 'black',
-          }">LARGE CAP</button>
-      <button class="options-button">Mid Cap</button>
-      <button class="options-button">Small Cap</button>
-      <button class="options-button">Micro Cap</button>
-      <button class="options-button">All ASX</button>
-    </div>
-    <p>These are companies that have a market cap > $5B</p>
-
+    <h3 style="fontWeight: 400">{{ items.heading }}</h3>
 
     <table>
       <thead>
-        <tr>
-          <td>COMPANY</td>
-          <td>VOLUME</td>
-          <td>LAST</td>
-          <td>%CHG</td>
+        <tr :key="item">
+          <td v-for="item in items.headers" >{{  item }}</td>
+
         </tr>
       </thead>
-      <colgroup>
-        <col span="1" style="width: 50%;">
-        <col span="1" style="width: 25%;">
-        <col span="1" style="width: 15%;">
-        <col span="1" style="width: 10%;">
+      <colgroup >
+        <col span="1" style="width: 40%">
+        <col v-for="item in items.headers" span="1">
       </colgroup>
 
 
@@ -42,21 +27,24 @@
             <a>
               <span class="tbody-icon"></span>
               <div class="tbody-text">
-                <div class="tbody-header">{{ item.name }}</div>
-                <div class="tbody-subheader"> {{ item.desc }}</div>
+                <div class="tbody-header">{{ item.symbol }}</div>
+                <div class="tbody-subheader"> {{ item.company }}</div>
               </div>
             </a>
           </td>
-          <td>{{ item.vol }}</td>
-          <td>{{ item.last }}</td>
           <td 
-            :style="{ color: items.title !== 'Stocks on the charge' ? 'var(--grafa-red)' : 'var(--grafa-green)', textAlign: 'right' }">
-            {{ item.chg }}
-          </td>
+            v-for="sub in Object.keys(item).filter((key) => key !== 'company' && key !== 'symbol')"
+            :style="{
+              color: !sub.toLowerCase().includes('chg') ? 'white' 
+                : item[sub].startsWith('-') ? 'var(--grafa-red)' : 'var(--grafa-green)'  
+              }"
+            >{{ item[sub] }}</td>
+
         </tr>
       </tbody>
     </table>
 
+  </div>
   </div>
 </template>
 
@@ -66,7 +54,7 @@
 
 
 export default {
-  name: "FiatTable",
+  name: "BigFiatTable",
 
   props: {
     items: {
@@ -82,31 +70,26 @@ export default {
 
 
 <style scoped lang="scss">
+.wrapper {
+  width: 100%  ;
+  margin: 2rem 0;
+  
+}
 .container {
   display: flex;
   flex-direction: column;
-  //* width is in parent 
+  padding: 0 1rem;
+
+
 }
 
 h2 {
   font-weight: 700;
-  color: rgb(0, 236, 0);
-  line-height: 0.5;
   font-size: 1.125rem;
 }
-.options {
-  margin-top: 10px;
-  margin-left: 0;
-  white-space: nowrap;
-
-  & button {
-    border: none;
-    background-color: var(--grafa-grey-blue);
-    color: white;
-    padding: 0.3rem 0.4rem;
-    margin-right: 6px;
-    border-radius: 16px;
-  }
+h3 {
+  color: var(--grafa-aqua);
+  font-size: 1rem;
 }
 
 table {
@@ -130,11 +113,6 @@ tbody tr {
   padding: 14px 0;
   border-bottom: 1px solid var(--grafa-aqua);
   width: 100%;
-
-  
-  & td:last-child {
-    color: rgb(0, 235, 0);
-  }
 }
 
 .first-td {
